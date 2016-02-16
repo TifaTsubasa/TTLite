@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C4F50651C731D190008702E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F50641C731D190008702E /* main.m */; };
-		5C4F50681C731D190008702E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F50671C731D190008702E /* AppDelegate.m */; };
-		5C4F506B1C731D190008702E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F506A1C731D190008702E /* ViewController.m */; };
-		5C4F506E1C731D190008702E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4F506C1C731D190008702E /* Main.storyboard */; };
-		5C4F50701C731D190008702E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C4F506F1C731D190008702E /* Assets.xcassets */; };
-		5C4F50731C731D190008702E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4F50711C731D190008702E /* LaunchScreen.storyboard */; };
 		5C4F507E1C731D190008702E /* TTLiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F507D1C731D190008702E /* TTLiteTests.m */; };
 		5C4F50891C731D1A0008702E /* TTLiteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F50881C731D1A0008702E /* TTLiteUITests.m */; };
+		5C4F50A21C7320750008702E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F50981C7320750008702E /* AppDelegate.m */; };
+		5C4F50A31C7320750008702E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C4F50991C7320750008702E /* Assets.xcassets */; };
+		5C4F50A41C7320750008702E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4F509A1C7320750008702E /* LaunchScreen.storyboard */; };
+		5C4F50A51C7320750008702E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4F509C1C7320750008702E /* Main.storyboard */; };
+		5C4F50A61C7320750008702E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C4F509E1C7320750008702E /* Info.plist */; };
+		5C4F50A71C7320750008702E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F509F1C7320750008702E /* main.m */; };
+		5C4F50A81C7320750008702E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F50A11C7320750008702E /* ViewController.m */; };
+		5C4F50C11C7322F00008702E /* TTFMDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F50C01C7322F00008702E /* TTFMDBTool.m */; };
+		5C4F50C31C7332270008702E /* casts in Resources */ = {isa = PBXBuildFile; fileRef = 5C4F50C21C7332270008702E /* casts */; };
+		5C4F50C61C73323D0008702E /* Cast.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F50C51C73323D0008702E /* Cast.m */; };
+		942ED4915EDB82B130232539 /* libPods-TTLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9E5DF8500455945F73725C /* libPods-TTLite.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,22 +40,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F9E5DF8500455945F73725C /* libPods-TTLite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TTLite.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4F50601C731D190008702E /* TTLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C4F50641C731D190008702E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5C4F50661C731D190008702E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5C4F50671C731D190008702E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5C4F50691C731D190008702E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5C4F506A1C731D190008702E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5C4F506D1C731D190008702E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5C4F506F1C731D190008702E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5C4F50721C731D190008702E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5C4F50741C731D190008702E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C4F50791C731D190008702E /* TTLiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTLiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4F507D1C731D190008702E /* TTLiteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTLiteTests.m; sourceTree = "<group>"; };
 		5C4F507F1C731D190008702E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C4F50841C731D1A0008702E /* TTLiteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTLiteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4F50881C731D1A0008702E /* TTLiteUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTLiteUITests.m; sourceTree = "<group>"; };
 		5C4F508A1C731D1A0008702E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C4F50971C7320750008702E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5C4F50981C7320750008702E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5C4F50991C7320750008702E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C4F509B1C7320750008702E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5C4F509D1C7320750008702E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C4F509E1C7320750008702E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C4F509F1C7320750008702E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5C4F50A01C7320750008702E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5C4F50A11C7320750008702E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5C4F50BF1C7322F00008702E /* TTFMDBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFMDBTool.h; sourceTree = "<group>"; };
+		5C4F50C01C7322F00008702E /* TTFMDBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFMDBTool.m; sourceTree = "<group>"; };
+		5C4F50C21C7332270008702E /* casts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = casts; sourceTree = "<group>"; };
+		5C4F50C41C73323D0008702E /* Cast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cast.h; sourceTree = "<group>"; };
+		5C4F50C51C73323D0008702E /* Cast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cast.m; sourceTree = "<group>"; };
+		79BE9E6885273B16D50F095E /* Pods-TTLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTLite.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTLite/Pods-TTLite.release.xcconfig"; sourceTree = "<group>"; };
+		DEC82E68E0F022B7C21F7339 /* Pods-TTLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTLite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTLite/Pods-TTLite.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				942ED4915EDB82B130232539 /* libPods-TTLite.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,10 +95,13 @@
 		5C4F50571C731D190008702E = {
 			isa = PBXGroup;
 			children = (
-				5C4F50621C731D190008702E /* TTLite */,
+				5C4F50A91C73207E0008702E /* TTLite */,
+				5C4F50961C7320750008702E /* Example */,
 				5C4F507C1C731D190008702E /* TTLiteTests */,
 				5C4F50871C731D1A0008702E /* TTLiteUITests */,
 				5C4F50611C731D190008702E /* Products */,
+				6DFD0D2ACEB430189FD2A4AC /* Pods */,
+				BF4BC6F8871DD81444A17BA6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,30 +113,6 @@
 				5C4F50841C731D1A0008702E /* TTLiteUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		5C4F50621C731D190008702E /* TTLite */ = {
-			isa = PBXGroup;
-			children = (
-				5C4F50661C731D190008702E /* AppDelegate.h */,
-				5C4F50671C731D190008702E /* AppDelegate.m */,
-				5C4F50691C731D190008702E /* ViewController.h */,
-				5C4F506A1C731D190008702E /* ViewController.m */,
-				5C4F506C1C731D190008702E /* Main.storyboard */,
-				5C4F506F1C731D190008702E /* Assets.xcassets */,
-				5C4F50711C731D190008702E /* LaunchScreen.storyboard */,
-				5C4F50741C731D190008702E /* Info.plist */,
-				5C4F50631C731D190008702E /* Supporting Files */,
-			);
-			path = TTLite;
-			sourceTree = "<group>";
-		};
-		5C4F50631C731D190008702E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5C4F50641C731D190008702E /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		5C4F507C1C731D190008702E /* TTLiteTests */ = {
@@ -140,6 +133,51 @@
 			path = TTLiteUITests;
 			sourceTree = "<group>";
 		};
+		5C4F50961C7320750008702E /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				5C4F50C21C7332270008702E /* casts */,
+				5C4F50971C7320750008702E /* AppDelegate.h */,
+				5C4F50981C7320750008702E /* AppDelegate.m */,
+				5C4F50991C7320750008702E /* Assets.xcassets */,
+				5C4F509A1C7320750008702E /* LaunchScreen.storyboard */,
+				5C4F509C1C7320750008702E /* Main.storyboard */,
+				5C4F509E1C7320750008702E /* Info.plist */,
+				5C4F509F1C7320750008702E /* main.m */,
+				5C4F50A01C7320750008702E /* ViewController.h */,
+				5C4F50A11C7320750008702E /* ViewController.m */,
+				5C4F50C41C73323D0008702E /* Cast.h */,
+				5C4F50C51C73323D0008702E /* Cast.m */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		5C4F50A91C73207E0008702E /* TTLite */ = {
+			isa = PBXGroup;
+			children = (
+				5C4F50BF1C7322F00008702E /* TTFMDBTool.h */,
+				5C4F50C01C7322F00008702E /* TTFMDBTool.m */,
+			);
+			path = TTLite;
+			sourceTree = "<group>";
+		};
+		6DFD0D2ACEB430189FD2A4AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DEC82E68E0F022B7C21F7339 /* Pods-TTLite.debug.xcconfig */,
+				79BE9E6885273B16D50F095E /* Pods-TTLite.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BF4BC6F8871DD81444A17BA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F9E5DF8500455945F73725C /* libPods-TTLite.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +185,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C4F508D1C731D1A0008702E /* Build configuration list for PBXNativeTarget "TTLite" */;
 			buildPhases = (
+				720BC69C1AA11776903FEEF3 /* Check Pods Manifest.lock */,
 				5C4F505C1C731D190008702E /* Sources */,
 				5C4F505D1C731D190008702E /* Frameworks */,
 				5C4F505E1C731D190008702E /* Resources */,
+				2BFFFB60123891BB9EA1DBBF /* Embed Pods Frameworks */,
+				07489548D0AB109E5541873B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -243,9 +284,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C4F50731C731D190008702E /* LaunchScreen.storyboard in Resources */,
-				5C4F50701C731D190008702E /* Assets.xcassets in Resources */,
-				5C4F506E1C731D190008702E /* Main.storyboard in Resources */,
+				5C4F50A61C7320750008702E /* Info.plist in Resources */,
+				5C4F50C31C7332270008702E /* casts in Resources */,
+				5C4F50A51C7320750008702E /* Main.storyboard in Resources */,
+				5C4F50A31C7320750008702E /* Assets.xcassets in Resources */,
+				5C4F50A41C7320750008702E /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,14 +308,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07489548D0AB109E5541873B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TTLite/Pods-TTLite-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2BFFFB60123891BB9EA1DBBF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TTLite/Pods-TTLite-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		720BC69C1AA11776903FEEF3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5C4F505C1C731D190008702E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C4F506B1C731D190008702E /* ViewController.m in Sources */,
-				5C4F50681C731D190008702E /* AppDelegate.m in Sources */,
-				5C4F50651C731D190008702E /* main.m in Sources */,
+				5C4F50C61C73323D0008702E /* Cast.m in Sources */,
+				5C4F50A81C7320750008702E /* ViewController.m in Sources */,
+				5C4F50A71C7320750008702E /* main.m in Sources */,
+				5C4F50C11C7322F00008702E /* TTFMDBTool.m in Sources */,
+				5C4F50A21C7320750008702E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,20 +401,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5C4F506C1C731D190008702E /* Main.storyboard */ = {
+		5C4F509A1C7320750008702E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5C4F506D1C731D190008702E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5C4F50711C731D190008702E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5C4F50721C731D190008702E /* Base */,
+				5C4F509B1C7320750008702E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5C4F509C1C7320750008702E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C4F509D1C7320750008702E /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -411,9 +504,10 @@
 		};
 		5C4F508E1C731D1A0008702E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEC82E68E0F022B7C21F7339 /* Pods-TTLite.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TTLite/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsusolo.TTLite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,9 +516,10 @@
 		};
 		5C4F508F1C731D1A0008702E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79BE9E6885273B16D50F095E /* Pods-TTLite.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TTLite/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsusolo.TTLite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,6 +593,7 @@
 				5C4F508F1C731D1A0008702E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5C4F50901C731D1A0008702E /* Build configuration list for PBXNativeTarget "TTLiteTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +602,7 @@
 				5C4F50921C731D1A0008702E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5C4F50931C731D1A0008702E /* Build configuration list for PBXNativeTarget "TTLiteUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +611,7 @@
 				5C4F50951C731D1A0008702E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
