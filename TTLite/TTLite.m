@@ -180,7 +180,6 @@
         FMResultSet *set = [db executeQuery:selectSql];
         NSMutableArray *resultArray = [NSMutableArray array];
         while ([set next]) {
-            NSLog(@"%d", set.columnCount);
             NSObject *obj = [NSKeyedUnarchiver unarchiveObjectWithData:[set dataForColumnIndex:set.columnCount - 1]];
             [resultArray addObject:obj];
         }
