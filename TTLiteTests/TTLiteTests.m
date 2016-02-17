@@ -50,20 +50,12 @@
     NSArray *casts = [Cast mj_objectArrayWithKeyValuesArray:[NSJSONSerialization JSONObjectWithData:castsData options:NSJSONReadingMutableLeaves error:nil]];
     NSLog(@"%@", casts);
     
-    if ([self.lite insertObject:casts.lastObject]) {
-        NSLog(@"insert success");
-    } else {
-        NSLog(@"failure");
-    }
+    XCTAssert([self.lite insertObject:casts.lastObject], @"insert sucess");
 }
 
 - (void)testDelete
 {
-    if ([self.lite deleteObjectWithCondition:@"ID = '1036321'"]) {
-        NSLog(@"delete success");
-    } else {
-        NSLog(@"delete failure");
-    }
+    XCTAssert([self.lite deleteObjectWithCondition:@"ID = '1036321'"], @"delete success");
 }
 
 - (void)testPerformanceExample {
