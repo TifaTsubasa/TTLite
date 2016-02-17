@@ -50,7 +50,7 @@
     NSArray *casts = [Cast mj_objectArrayWithKeyValuesArray:[NSJSONSerialization JSONObjectWithData:castsData options:NSJSONReadingMutableLeaves error:nil]];
     NSLog(@"%@", casts);
     
-    XCTAssert([self.lite insertObject:casts.lastObject], @"insert sucess");
+    [self.lite insertObject:casts.lastObject];
 }
 
 - (void)testMultiInsert
@@ -59,7 +59,7 @@
     NSData *castsData = [NSData dataWithContentsOfURL:castsPath];
     NSArray *casts = [Cast mj_objectArrayWithKeyValuesArray:[NSJSONSerialization JSONObjectWithData:castsData options:NSJSONReadingMutableLeaves error:nil]];
     
-    XCTAssert([self.lite insertObjects:casts], @"insert sucess");
+    [self.lite insertObjects:casts];
 }
 
 - (void)testUpdate
@@ -68,20 +68,21 @@
     cast.alt = @"https://google.com";
     cast.ID = @"112233";
     cast.name = @"update test";
-    XCTAssert([self.lite updateObject:cast condition:@"ID = 1036321"], @"update success");
+    [self.lite updateObject:cast condition:@"ID = 1036321"];
 }
 
 - (void)testDelete
 {
-    XCTAssert([self.lite deleteObjectWithCondition:@"ID = '1036321'"], @"delete success");
+    [self.lite deleteObjectWithCondition:@"ID = '1036321'"];
 }
 
 - (void)testSelect
 {
-    NSArray *result = [self.lite queryObjectsWithCondition:@"ID = 112233"];
-    Cast *cast = result.lastObject;
-    XCTAssertTrue([cast.alt isEqualToString:@"https://google.com"], @"alt right");
-    XCTAssertTrue([cast.name isEqualToString:@"update test"], @"name right");
+    [self.lite queryObjectsWithCondition:@"ID = 112233" result:^(NSArray *result) {
+        Cast *cast = result.lastObject;
+        XCTAssertTrue([cast.alt isEqualToString:@"https://google.com"], @"alt right");
+        XCTAssertTrue([cast.name isEqualToString:@"update test"], @"name right");
+    }];
 }
 
 - (void)testPerformanceExample {

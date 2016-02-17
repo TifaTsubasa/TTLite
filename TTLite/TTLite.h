@@ -13,16 +13,14 @@
 
 + (instancetype)liteWithPath:(NSString *)path storeClass:(Class)cls;
 
-- (instancetype)initWithPath:(NSString *)path;
+- (void)insertObject:(NSObject *)obj;
 
-- (BOOL)insertObject:(NSObject *)obj;
+- (void)insertObjects:(NSArray *)objs;
 
-- (BOOL)insertObjects:(NSArray *)objs;
+- (void)deleteObjectWithCondition:(NSString *)condition;
 
-- (BOOL)deleteObjectWithCondition:(NSString *)condition;
+- (void)updateObject:(NSObject *)obj condition:(NSString *)condition;
 
-- (BOOL)updateObject:(NSObject *)obj condition:(NSString *)condition;
-
-- (NSArray *)queryObjectsWithCondition:(NSString *)condition;
+- (void)queryObjectsWithCondition:(NSString *)condition result:(void(^)(NSArray *resultArray))result;
 
 @end
