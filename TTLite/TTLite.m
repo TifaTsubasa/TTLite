@@ -166,7 +166,7 @@
         queryStr = [NSString stringWithFormat:@"WHERE %@", condition];
     }
     if (!(range.location == 0 && range.length == 0)) {
-        rangeStr = [NSString stringWithFormat:@"LIMIT %ld,%ld", range.location, range.length];
+        rangeStr = [NSString stringWithFormat:@"LIMIT %ld,%ld", (unsigned long)range.location, (unsigned long)range.length];
     }
     if (!asc) {
         ascendStr = @"DESC";
