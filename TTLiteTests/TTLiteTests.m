@@ -53,6 +53,15 @@
     XCTAssert([self.lite insertObject:casts.lastObject], @"insert sucess");
 }
 
+- (void)testUpdate
+{
+    Cast *cast = [[Cast alloc] init];
+    cast.alt = @"https://google.com";
+    cast.ID = @"112233";
+    cast.name = @"update test";
+    XCTAssert([self.lite updateObject:cast condition:@"ID = 1036321"], @"update success");
+}
+
 - (void)testDelete
 {
     XCTAssert([self.lite deleteObjectWithCondition:@"ID = '1036321'"], @"delete success");

@@ -19,4 +19,6 @@
 
 - (BOOL)deleteObjectWithCondition:(NSString *)condition;
 
+- (BOOL)updateObject:(NSObject *)obj condition:(NSString *)condition;
+
 @end

@@ -80,6 +80,7 @@
     NSString *insertSql = [NSString stringWithFormat:@"INSERT INTO %@(%@obj) VALUES (%@);", _sqlName, queryString, placeholders];
     
     [propertyArray addObject:obj];
+    NSLog(@"%@", insertSql);
     return [_db executeUpdate:insertSql values:propertyArray error:nil];
 }
 
@@ -91,6 +92,24 @@
     
     NSString *deleteSql = [NSString stringWithFormat:@"DELETE FROM %@ WHERE %@", _sqlName, condition];
     return [_db executeUpdate:deleteSql];
+}
+
+- (BOOL)updateObject:(NSObject *)obj condition:(NSString *)condition
+{
+    if (![self confirmPath]) {
+        return NO;
+    }
+    
+    NSMutableString *selString = [NSMutableString string];
+    NSMutableArray *placeholders = [NSMutableArray array];
+    for (NSString *name in _queryNames) {
+        [selString appendString:[NSString stringWithFormat:@"%@ = ?, ", name]];
+        [placeholders addObject:[obj valueForKey:name]];
+    }
+    [selString appendString:@"obj = ?"];
+    [placeholders addObject:obj];
+    NSString *updateSql = [NSString stringWithFormat:@"UPDATE %@ SET %@ WHERE %@", _sqlName, selString, condition];
+    return [_db executeUpdate:updateSql values:placeholders error:nil];
 }
 
 - (BOOL)confirmPath
