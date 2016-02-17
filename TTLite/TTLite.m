@@ -32,7 +32,7 @@
     
     NSString *name = [path lastPathComponent];
     NSRange range = [name rangeOfString:@"."];
-    lite.sqlName = [name substringToIndex:range.location];
+    lite.sqlName = [NSString stringWithFormat:@"t_%@", [name substringToIndex:range.location]];
     
     NSMutableString *queryString = [NSMutableString string];
     for (NSString *name in lite.queryNames) {
@@ -84,6 +84,32 @@
     return [_db executeUpdate:insertSql values:propertyArray error:nil];
 }
 
+- (BOOL)insertObjects:(NSArray *)objs
+{
+    if (![self confirmPath]) {
+        return NO;
+    }
+    
+    for (NSObject *obj in objs) {
+        NSMutableString *queryString = [NSMutableString string];
+        NSMutableArray *propertyArray = [NSMutableArray array];
+        NSMutableString *placeholders = [NSMutableString string];
+        for (NSString *name in _queryNames) {
+            NSString *str = [NSString stringWithFormat:@"%@, ", name];
+            [queryString appendString:str];
+            [propertyArray addObject:[obj valueForKey:name]];
+            [placeholders appendString:@"?, "];
+        }
+        [placeholders appendString:@"?"];
+        NSString *insertSql = [NSString stringWithFormat:@"INSERT INTO %@(%@obj) VALUES (%@);", _sqlName, queryString, placeholders];
+        
+        [propertyArray addObject:[NSKeyedArchiver archivedDataWithRootObject:obj]];
+        NSLog(@"%@", insertSql);
+        NSAssert([_db executeUpdate:insertSql values:propertyArray error:nil], @"success");
+    }
+    return YES;
+}
+
 - (BOOL)deleteObjectWithCondition:(NSString *)condition
 {
     if (![self confirmPath]) {
@@ -112,7 +138,7 @@
     return [_db executeUpdate:updateSql values:placeholders error:nil];
 }
 
-- (NSArray *)objectsWithCondition:(NSString *)condition
+- (NSArray *)queryObjectsWithCondition:(NSString *)condition
 {
     if (![self confirmPath]) {
         return nil;

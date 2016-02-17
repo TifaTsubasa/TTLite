@@ -17,10 +17,12 @@
 
 - (BOOL)insertObject:(NSObject *)obj;
 
+- (BOOL)insertObjects:(NSArray *)objs;
+
 - (BOOL)deleteObjectWithCondition:(NSString *)condition;
 
 - (BOOL)updateObject:(NSObject *)obj condition:(NSString *)condition;
 
-- (NSArray *)objectsWithCondition:(NSString *)condition;
+- (NSArray *)queryObjectsWithCondition:(NSString *)condition;
 
 @end

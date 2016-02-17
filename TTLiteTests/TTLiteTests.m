@@ -53,6 +53,15 @@
     XCTAssert([self.lite insertObject:casts.lastObject], @"insert sucess");
 }
 
+- (void)testMultiInsert
+{
+    NSURL *castsPath = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"casts" ofType:nil]];
+    NSData *castsData = [NSData dataWithContentsOfURL:castsPath];
+    NSArray *casts = [Cast mj_objectArrayWithKeyValuesArray:[NSJSONSerialization JSONObjectWithData:castsData options:NSJSONReadingMutableLeaves error:nil]];
+    
+    XCTAssert([self.lite insertObjects:casts], @"insert sucess");
+}
+
 - (void)testUpdate
 {
     Cast *cast = [[Cast alloc] init];
@@ -69,7 +78,7 @@
 
 - (void)testSelect
 {
-    NSArray *result = [self.lite objectsWithCondition:@"ID = 112233"];
+    NSArray *result = [self.lite queryObjectsWithCondition:@"ID = 112233"];
     Cast *cast = result.lastObject;
     XCTAssertTrue([cast.alt isEqualToString:@"https://google.com"], @"alt right");
     XCTAssertTrue([cast.name isEqualToString:@"update test"], @"name right");
