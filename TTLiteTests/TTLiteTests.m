@@ -67,6 +67,14 @@
     XCTAssert([self.lite deleteObjectWithCondition:@"ID = '1036321'"], @"delete success");
 }
 
+- (void)testSelect
+{
+    NSArray *result = [self.lite objectsWithCondition:@"ID = 112233"];
+    Cast *cast = result.lastObject;
+    XCTAssertTrue([cast.alt isEqualToString:@"https://google.com"], @"alt right");
+    XCTAssertTrue([cast.name isEqualToString:@"update test"], @"name right");
+}
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{

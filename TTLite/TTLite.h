@@ -21,4 +21,6 @@
 
 - (BOOL)updateObject:(NSObject *)obj condition:(NSString *)condition;
 
+- (NSArray *)objectsWithCondition:(NSString *)condition;
+
 @end

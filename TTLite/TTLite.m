@@ -79,7 +79,7 @@
     [placeholders appendString:@"?"];
     NSString *insertSql = [NSString stringWithFormat:@"INSERT INTO %@(%@obj) VALUES (%@);", _sqlName, queryString, placeholders];
     
-    [propertyArray addObject:obj];
+    [propertyArray addObject:[NSKeyedArchiver archivedDataWithRootObject:obj]];
     NSLog(@"%@", insertSql);
     return [_db executeUpdate:insertSql values:propertyArray error:nil];
 }
@@ -107,11 +107,29 @@
         [placeholders addObject:[obj valueForKey:name]];
     }
     [selString appendString:@"obj = ?"];
-    [placeholders addObject:obj];
+    [placeholders addObject:[NSKeyedArchiver archivedDataWithRootObject:obj]];
     NSString *updateSql = [NSString stringWithFormat:@"UPDATE %@ SET %@ WHERE %@", _sqlName, selString, condition];
     return [_db executeUpdate:updateSql values:placeholders error:nil];
 }
 
+- (NSArray *)objectsWithCondition:(NSString *)condition
+{
+    if (![self confirmPath]) {
+        return nil;
+    }
+    
+    NSString *selectSql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE %@", _sqlName, condition];
+    FMResultSet *set = [_db executeQuery:selectSql];
+    NSMutableArray *resultArray = [NSMutableArray array];
+    while ([set next]) {
+        NSLog(@"%d", set.columnCount);
+        NSObject *obj = [NSKeyedUnarchiver unarchiveObjectWithData:[set dataForColumnIndex:set.columnCount - 1]];
+        [resultArray addObject:obj];
+    }
+    return resultArray;
+}
+
+#pragma mark -- private method
 - (BOOL)confirmPath
 {
     if (self.path == nil || [self.path isEqualToString:@""]) {
