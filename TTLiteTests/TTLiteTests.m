@@ -23,7 +23,7 @@
 - (TTLite *)lite
 {
     if (! _lite) {
-        NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:@"test.sqlite"];
+        NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:@"food.sqlite"];
         _lite = [TTLite liteWithPath:path storeClass:[Cast class]];
     }
     return _lite;
@@ -48,7 +48,6 @@
     NSURL *castsPath = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"casts" ofType:nil]];
     NSData *castsData = [NSData dataWithContentsOfURL:castsPath];
     NSArray *casts = [Cast mj_objectArrayWithKeyValuesArray:[NSJSONSerialization JSONObjectWithData:castsData options:NSJSONReadingMutableLeaves error:nil]];
-    NSLog(@"%@", casts);
     
     [self.lite insertObject:casts.lastObject];
 }
@@ -73,12 +72,12 @@
 
 - (void)testDelete
 {
-    [self.lite deleteObjectWithCondition:@"ID = '1036321'"];
+    [self.lite deleteObjectWithCondition:@"ID = 1036321"];
 }
 
 - (void)testSelect
 {
-    [self.lite queryObjectsWithCondition:@"ID = 112233" result:^(NSArray *result) {
+    [self.lite queryObjectsWithCondition:@"ID = '112233'" result:^(NSArray *result) {
         Cast *cast = result.lastObject;
         XCTAssertTrue([cast.alt isEqualToString:@"https://google.com"], @"alt right");
         XCTAssertTrue([cast.name isEqualToString:@"update test"], @"name right");

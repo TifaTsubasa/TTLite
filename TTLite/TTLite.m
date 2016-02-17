@@ -145,7 +145,37 @@
 {
     if (![self confirmPath]) return;
     
-    NSString *selectSql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE %@", _sqlName, condition];
+//    NSString *selectSql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE %@", _sqlName, condition];
+    
+    [self queryObjectsWithCondition:condition limit:NSRangeZero orderBy:nil ascending:YES result:^(NSArray *resultArray) {
+        if (result) {
+            result(resultArray);
+        }
+    }];
+}
+
+- (void)queryObjectsWithCondition:(NSString *)condition limit:(NSRange)range orderBy:(NSString *)sortName ascending:(BOOL)asc result:(void (^)(NSArray *))result
+{
+    if (![self confirmPath]) return;
+    
+    NSString *queryStr = [NSString string];
+    NSString *rangeStr = [NSString string];
+    NSString *sortStr = [NSString string];
+    NSString *ascendStr = [NSString string];
+    if (condition) {
+        queryStr = [NSString stringWithFormat:@"WHERE %@", condition];
+    }
+    if (!(range.location == 0 && range.length == 0)) {
+        rangeStr = [NSString stringWithFormat:@"LIMIT %ld,%ld", range.location, range.length];
+    }
+    if (!asc) {
+        ascendStr = @"DESC";
+    }
+    if (sortName) {
+        sortStr = [NSString stringWithFormat:@"ORDER BY %@ %@", sortName, ascendStr];
+    }
+    
+    NSString *selectSql = [NSString stringWithFormat:@"SELECT * FROM %@ %@ %@ %@", _sqlName, queryStr, sortStr, rangeStr];
     [_dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         FMResultSet *set = [db executeQuery:selectSql];
         NSMutableArray *resultArray = [NSMutableArray array];

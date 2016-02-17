@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "NSObject+TTKeyValue.h"
 
+#define NSRangeZero NSMakeRange(0, 0)
+
 @interface TTLite : NSObject
 
 + (instancetype)liteWithPath:(NSString *)path storeClass:(Class)cls;
@@ -22,5 +24,7 @@
 - (void)updateObject:(NSObject *)obj condition:(NSString *)condition;
 
 - (void)queryObjectsWithCondition:(NSString *)condition result:(void(^)(NSArray *resultArray))result;
+
+- (void)queryObjectsWithCondition:(NSString *)condition limit:(NSRange)range orderBy:(NSString *)sortName ascending:(BOOL)asc result:(void (^)(NSArray *resultArray))result;
 
 @end
