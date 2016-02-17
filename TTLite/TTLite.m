@@ -23,16 +23,19 @@
 
 @implementation TTLite
 
-+ (instancetype)liteWithPath:(NSString *)path queryNames:(NSArray *)names
++ (instancetype)liteWithPath:(NSString *)path storeClass:(__unsafe_unretained Class)cls
 {
     TTLite *lite = [[TTLite alloc] initWithPath:path];
-    lite.queryNames = names;
+    if ([cls respondsToSelector:@selector(tt_queryPropertyNames)]) {
+        lite.queryNames = [cls tt_queryPropertyNames];
+    }
+    
     NSString *name = [path lastPathComponent];
     NSRange range = [name rangeOfString:@"."];
     lite.sqlName = [name substringToIndex:range.location];
     
     NSMutableString *queryString = [NSMutableString string];
-    for (NSString *name in names) {
+    for (NSString *name in lite.queryNames) {
         NSString *str = [NSString stringWithFormat:@"%@ text, ", name];
         [queryString appendString:str];
     }

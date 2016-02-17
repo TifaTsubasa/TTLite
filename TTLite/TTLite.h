@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSObject+TTKeyValue.h"
 
 @interface TTLite : NSObject
 
-+ (instancetype)liteWithPath:(NSString *)path queryNames:(NSArray *)names;
++ (instancetype)liteWithPath:(NSString *)path storeClass:(Class)cls;
 
 - (instancetype)initWithPath:(NSString *)path;
 

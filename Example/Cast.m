@@ -8,6 +8,7 @@
 
 #import "Cast.h"
 #import <MJExtension.h>
+#import "TTLite.h"
 
 @implementation Cast
 
@@ -16,6 +17,11 @@ MJCodingImplementation
 + (NSDictionary *)mj_replacedKeyFromPropertyName
 {
     return @{@"ID": @"id"};
+}
+
++ (NSArray *)tt_queryPropertyNames
+{
+    return @[@"ID", @"name"];
 }
 
 @end

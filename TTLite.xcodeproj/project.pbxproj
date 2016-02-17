@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C0445711C743CCA00832D33 /* NSObject+TTKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0445701C743CCA00832D33 /* NSObject+TTKeyValue.m */; };
 		5C4F507E1C731D190008702E /* TTLiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F507D1C731D190008702E /* TTLiteTests.m */; };
 		5C4F50891C731D1A0008702E /* TTLiteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F50881C731D1A0008702E /* TTLiteUITests.m */; };
 		5C4F50A21C7320750008702E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F50981C7320750008702E /* AppDelegate.m */; };
@@ -16,7 +17,6 @@
 		5C4F50A61C7320750008702E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C4F509E1C7320750008702E /* Info.plist */; };
 		5C4F50A71C7320750008702E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F509F1C7320750008702E /* main.m */; };
 		5C4F50A81C7320750008702E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F50A11C7320750008702E /* ViewController.m */; };
-		5C4F50C11C7322F00008702E /* TTFMDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F50C01C7322F00008702E /* TTFMDBTool.m */; };
 		5C4F50C31C7332270008702E /* casts in Resources */ = {isa = PBXBuildFile; fileRef = 5C4F50C21C7332270008702E /* casts */; };
 		5C4F50C61C73323D0008702E /* Cast.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F50C51C73323D0008702E /* Cast.m */; };
 		5C543A541C740E8B00E99F67 /* TTLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C543A531C740E8B00E99F67 /* TTLite.m */; };
@@ -43,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		3F9E5DF8500455945F73725C /* libPods-TTLite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TTLite.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C04456F1C743CCA00832D33 /* NSObject+TTKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TTKeyValue.h"; sourceTree = "<group>"; };
+		5C0445701C743CCA00832D33 /* NSObject+TTKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TTKeyValue.m"; sourceTree = "<group>"; };
 		5C4F50601C731D190008702E /* TTLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4F50791C731D190008702E /* TTLiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTLiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4F507D1C731D190008702E /* TTLiteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTLiteTests.m; sourceTree = "<group>"; };
@@ -59,8 +61,6 @@
 		5C4F509F1C7320750008702E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5C4F50A01C7320750008702E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5C4F50A11C7320750008702E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5C4F50BF1C7322F00008702E /* TTFMDBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFMDBTool.h; sourceTree = "<group>"; };
-		5C4F50C01C7322F00008702E /* TTFMDBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFMDBTool.m; sourceTree = "<group>"; };
 		5C4F50C21C7332270008702E /* casts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = casts; sourceTree = "<group>"; };
 		5C4F50C41C73323D0008702E /* Cast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cast.h; sourceTree = "<group>"; };
 		5C4F50C51C73323D0008702E /* Cast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cast.m; sourceTree = "<group>"; };
@@ -163,8 +163,8 @@
 		5C4F50A91C73207E0008702E /* TTLite */ = {
 			isa = PBXGroup;
 			children = (
-				5C4F50BF1C7322F00008702E /* TTFMDBTool.h */,
-				5C4F50C01C7322F00008702E /* TTFMDBTool.m */,
+				5C04456F1C743CCA00832D33 /* NSObject+TTKeyValue.h */,
+				5C0445701C743CCA00832D33 /* NSObject+TTKeyValue.m */,
 				5C543A521C740E8B00E99F67 /* TTLite.h */,
 				5C543A531C740E8B00E99F67 /* TTLite.m */,
 			);
@@ -424,8 +424,8 @@
 			files = (
 				5C4F50C61C73323D0008702E /* Cast.m in Sources */,
 				5C4F50A81C7320750008702E /* ViewController.m in Sources */,
+				5C0445711C743CCA00832D33 /* NSObject+TTKeyValue.m in Sources */,
 				5C4F50A71C7320750008702E /* main.m in Sources */,
-				5C4F50C11C7322F00008702E /* TTFMDBTool.m in Sources */,
 				5C4F50A21C7320750008702E /* AppDelegate.m in Sources */,
 				5C543A541C740E8B00E99F67 /* TTLite.m in Sources */,
 			);

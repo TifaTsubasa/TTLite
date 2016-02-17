@@ -24,8 +24,7 @@
 {
     if (! _lite) {
         NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:@"test.sqlite"];
-        _lite = [TTLite liteWithPath:path queryNames:@[@"ID", @"name"]];
-        
+        _lite = [TTLite liteWithPath:path storeClass:[Cast class]];
     }
     return _lite;
 }
