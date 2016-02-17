@@ -19,6 +19,8 @@
 		5C4F50C11C7322F00008702E /* TTFMDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F50C01C7322F00008702E /* TTFMDBTool.m */; };
 		5C4F50C31C7332270008702E /* casts in Resources */ = {isa = PBXBuildFile; fileRef = 5C4F50C21C7332270008702E /* casts */; };
 		5C4F50C61C73323D0008702E /* Cast.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F50C51C73323D0008702E /* Cast.m */; };
+		5C543A541C740E8B00E99F67 /* TTLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C543A531C740E8B00E99F67 /* TTLite.m */; };
+		7BDA6EB69BA9809C0AFB60D7 /* libPods-TTLiteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9EA3E8B0410FE7D41AE538 /* libPods-TTLiteTests.a */; };
 		942ED4915EDB82B130232539 /* libPods-TTLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9E5DF8500455945F73725C /* libPods-TTLite.a */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +64,12 @@
 		5C4F50C21C7332270008702E /* casts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = casts; sourceTree = "<group>"; };
 		5C4F50C41C73323D0008702E /* Cast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cast.h; sourceTree = "<group>"; };
 		5C4F50C51C73323D0008702E /* Cast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cast.m; sourceTree = "<group>"; };
+		5C543A521C740E8B00E99F67 /* TTLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTLite.h; sourceTree = "<group>"; };
+		5C543A531C740E8B00E99F67 /* TTLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTLite.m; sourceTree = "<group>"; };
 		79BE9E6885273B16D50F095E /* Pods-TTLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTLite.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTLite/Pods-TTLite.release.xcconfig"; sourceTree = "<group>"; };
+		8678853A2DFAFEAA3C7D55CA /* Pods-TTLiteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTLiteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTLiteTests/Pods-TTLiteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF9EA3E8B0410FE7D41AE538 /* libPods-TTLiteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TTLiteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C083A9FF29B19CF129BF3CF5 /* Pods-TTLiteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTLiteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTLiteTests/Pods-TTLiteTests.release.xcconfig"; sourceTree = "<group>"; };
 		DEC82E68E0F022B7C21F7339 /* Pods-TTLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTLite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTLite/Pods-TTLite.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BDA6EB69BA9809C0AFB60D7 /* libPods-TTLiteTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +165,8 @@
 			children = (
 				5C4F50BF1C7322F00008702E /* TTFMDBTool.h */,
 				5C4F50C01C7322F00008702E /* TTFMDBTool.m */,
+				5C543A521C740E8B00E99F67 /* TTLite.h */,
+				5C543A531C740E8B00E99F67 /* TTLite.m */,
 			);
 			path = TTLite;
 			sourceTree = "<group>";
@@ -166,6 +176,8 @@
 			children = (
 				DEC82E68E0F022B7C21F7339 /* Pods-TTLite.debug.xcconfig */,
 				79BE9E6885273B16D50F095E /* Pods-TTLite.release.xcconfig */,
+				8678853A2DFAFEAA3C7D55CA /* Pods-TTLiteTests.debug.xcconfig */,
+				C083A9FF29B19CF129BF3CF5 /* Pods-TTLiteTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -174,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				3F9E5DF8500455945F73725C /* libPods-TTLite.a */,
+				AF9EA3E8B0410FE7D41AE538 /* libPods-TTLiteTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -205,9 +218,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C4F50901C731D1A0008702E /* Build configuration list for PBXNativeTarget "TTLiteTests" */;
 			buildPhases = (
+				64E60E478FBEB5A9DCE7001B /* Check Pods Manifest.lock */,
 				5C4F50751C731D190008702E /* Sources */,
 				5C4F50761C731D190008702E /* Frameworks */,
 				5C4F50771C731D190008702E /* Resources */,
+				FBFBBBEBF4D88727AE24F28C /* Embed Pods Frameworks */,
+				44C8FB0C0D82737C45D825AA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -339,6 +355,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TTLite/Pods-TTLite-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		44C8FB0C0D82737C45D825AA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TTLiteTests/Pods-TTLiteTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64E60E478FBEB5A9DCE7001B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		720BC69C1AA11776903FEEF3 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,6 +400,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		FBFBBBEBF4D88727AE24F28C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TTLiteTests/Pods-TTLiteTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -366,6 +427,7 @@
 				5C4F50A71C7320750008702E /* main.m in Sources */,
 				5C4F50C11C7322F00008702E /* TTFMDBTool.m in Sources */,
 				5C4F50A21C7320750008702E /* AppDelegate.m in Sources */,
+				5C543A541C740E8B00E99F67 /* TTLite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +590,7 @@
 		};
 		5C4F50911C731D1A0008702E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8678853A2DFAFEAA3C7D55CA /* Pods-TTLiteTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TTLiteTests/Info.plist;
@@ -540,6 +603,7 @@
 		};
 		5C4F50921C731D1A0008702E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C083A9FF29B19CF129BF3CF5 /* Pods-TTLiteTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TTLiteTests/Info.plist;

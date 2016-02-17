@@ -9,7 +9,7 @@ target 'TTLite' do
 end
 
 target 'TTLiteTests' do
-
+  pod 'MJExtension', '~> 3.0.10'
 end
 
 target 'TTLiteUITests' do
