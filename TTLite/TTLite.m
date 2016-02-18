@@ -162,7 +162,7 @@
     NSString *rangeStr = [NSString string];
     NSString *sortStr = [NSString string];
     NSString *ascendStr = [NSString string];
-    if (condition) {
+    if (condition && ![condition isEqualToString:@""]) {
         queryStr = [NSString stringWithFormat:@"WHERE %@", condition];
     }
     if (!(range.location == 0 && range.length == 0)) {
@@ -171,7 +171,7 @@
     if (!asc) {
         ascendStr = @"DESC";
     }
-    if (sortName) {
+    if (sortName && ![sortName isEqualToString:@""]) {
         sortStr = [NSString stringWithFormat:@"ORDER BY %@ %@", sortName, ascendStr];
     }
     

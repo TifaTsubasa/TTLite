@@ -82,6 +82,9 @@
         XCTAssertTrue([cast.alt isEqualToString:@"https://google.com"], @"alt right");
         XCTAssertTrue([cast.name isEqualToString:@"update test"], @"name right");
     }];
+    [self.lite queryObjectsWithCondition:@"" result:^(NSArray *resultArray) {
+        
+    }];
 }
 
 - (void)testPerformanceExample {
