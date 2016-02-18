@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "TTLite"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = "Easy objective sqlite"
   s.description  = <<-DESC
                   更加面向对象的SQLite，简洁直观的对象存储

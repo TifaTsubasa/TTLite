@@ -72,7 +72,7 @@
 
 - (void)testDelete
 {
-    [self.lite deleteObjectWithCondition:@"ID = 1036321"];
+    [self.lite deleteObjectWithCondition:nil];
 }
 
 - (void)testSelect

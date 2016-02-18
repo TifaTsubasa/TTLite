@@ -112,8 +112,11 @@
 - (void)deleteObjectWithCondition:(NSString *)condition
 {
     if (![self confirmPath]) return;
-    
-    NSString *deleteSql = [NSString stringWithFormat:@"DELETE FROM %@ WHERE %@", _sqlName, condition];
+    NSString *condi = [NSString string];
+    if (condition && ![condition isEqualToString:@""]) {
+        condi = [NSString stringWithFormat:@"WHERE %@", condition];
+    }
+    NSString *deleteSql = [NSString stringWithFormat:@"DELETE FROM %@ %@", _sqlName, condi];
     [_dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         if (![db executeUpdate:deleteSql]) {
             NSLog(@"delete failure");
@@ -127,13 +130,18 @@
     
     NSMutableString *selString = [NSMutableString string];
     NSMutableArray *placeholders = [NSMutableArray array];
+    NSString *condi = [NSString string];
     for (NSString *name in _queryNames) {
         [selString appendString:[NSString stringWithFormat:@"%@ = ?, ", name]];
         [placeholders addObject:[obj valueForKey:name]];
     }
     [selString appendString:@"obj = ?"];
     [placeholders addObject:[NSKeyedArchiver archivedDataWithRootObject:obj]];
-    NSString *updateSql = [NSString stringWithFormat:@"UPDATE %@ SET %@ WHERE %@", _sqlName, selString, condition];
+    
+    if (condition && ![condition isEqualToString:@""]) {
+        condi = [NSString stringWithFormat:@"WHERE %@", condition];
+    }
+    NSString *updateSql = [NSString stringWithFormat:@"UPDATE %@ SET %@ %@", _sqlName, selString, condi];
     [_dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         if (![db executeUpdate:updateSql values:placeholders error:nil]) {
             NSLog(@"update failure");
