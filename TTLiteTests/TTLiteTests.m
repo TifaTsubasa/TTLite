@@ -25,6 +25,7 @@
     if (! _lite) {
         NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:@"food.sqlite"];
         _lite = [TTLite liteWithPath:path storeClass:[Cast class]];
+        [TTLite liteWithPath:path storeClass:[UIViewController class]];
     }
     return _lite;
 }
@@ -45,6 +46,7 @@
 
 - (void)testInsert
 {
+
     NSURL *castsPath = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"casts" ofType:nil]];
     NSData *castsData = [NSData dataWithContentsOfURL:castsPath];
     NSArray *casts = [Cast mj_objectArrayWithKeyValuesArray:[NSJSONSerialization JSONObjectWithData:castsData options:NSJSONReadingMutableLeaves error:nil]];

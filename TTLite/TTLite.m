@@ -30,9 +30,7 @@
         lite.queryNames = [cls tt_queryPropertyNames];
     }
     
-    NSString *name = [path lastPathComponent];
-    NSRange range = [name rangeOfString:@"."];
-    lite.sqlName = [NSString stringWithFormat:@"t_%@", [name substringToIndex:range.location]];
+    lite.sqlName = [NSString stringWithFormat:@"t_%@", [NSStringFromClass(cls) lowercaseString]];
     
     NSMutableString *queryString = [NSMutableString string];
     for (NSString *name in lite.queryNames) {
