@@ -23,6 +23,11 @@
 
 @implementation TTLite
 
+- (void)dealloc
+{
+    [self.dbQueue close];
+}
+
 + (instancetype)liteWithPath:(NSString *)path storeClass:(__unsafe_unretained Class)cls
 {
     TTLite *lite = [[TTLite alloc] initWithPath:path];
