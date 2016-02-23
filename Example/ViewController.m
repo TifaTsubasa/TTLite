@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Cast.h"
 
 @interface ViewController ()
 
@@ -16,8 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    
 }
 
 - (void)didReceiveMemoryWarning {

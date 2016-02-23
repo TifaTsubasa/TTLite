@@ -12,8 +12,10 @@
 
 @property (nonatomic, copy) NSString *alt;
 
-@property (nonatomic, copy) NSString *ID;
+@property (nonatomic, assign) int ID;
 
 @property (nonatomic, copy) NSString *name;
+
+@property (nonatomic, assign) BOOL isOk;
 
 @end

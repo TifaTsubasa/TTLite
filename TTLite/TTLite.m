@@ -23,6 +23,11 @@
 
 @implementation TTLite
 
+- (void)dealloc
+{
+    [self.dbQueue close];
+}
+
 + (instancetype)liteWithPath:(NSString *)path storeClass:(__unsafe_unretained Class)cls
 {
     TTLite *lite = [[TTLite alloc] initWithPath:path];
@@ -67,10 +72,13 @@
     NSMutableArray *propertyArray = [NSMutableArray array];
     NSMutableString *placeholders = [NSMutableString string];
     for (NSString *name in _queryNames) {
-        NSString *str = [NSString stringWithFormat:@"%@, ", name];
-        [queryString appendString:str];
-        [propertyArray addObject:[obj valueForKey:name]];
-        [placeholders appendString:@"?, "];
+        id value = [obj valueForKey:name];
+        if (value) {
+            NSString *str = [NSString stringWithFormat:@"%@, ", name];
+            [queryString appendString:str];
+            [propertyArray addObject:value];
+            [placeholders appendString:@"?, "];
+        }
     }
     [placeholders appendString:@"?"];
     NSString *insertSql = [NSString stringWithFormat:@"INSERT INTO %@(%@obj) VALUES (%@);", _sqlName, queryString, placeholders];
@@ -91,10 +99,13 @@
             NSMutableArray *propertyArray = [NSMutableArray array];
             NSMutableString *placeholders = [NSMutableString string];
             for (NSString *name in _queryNames) {
-                NSString *str = [NSString stringWithFormat:@"%@, ", name];
-                [queryString appendString:str];
-                [propertyArray addObject:[obj valueForKey:name]];
-                [placeholders appendString:@"?, "];
+                id value = [obj valueForKey:name];
+                if (value) {
+                    NSString *str = [NSString stringWithFormat:@"%@, ", name];
+                    [queryString appendString:str];
+                    [propertyArray addObject:value];
+                    [placeholders appendString:@"?, "];
+                }
             }
             [placeholders appendString:@"?"];
             NSString *insertSql = [NSString stringWithFormat:@"INSERT INTO %@(%@obj) VALUES (%@);", _sqlName, queryString, placeholders];
@@ -125,9 +136,11 @@
     
     NSMutableString *selString = [NSMutableString string];
     NSMutableArray *placeholders = [NSMutableArray array];
-    for (NSString *name in _queryNames) {
-        [selString appendString:[NSString stringWithFormat:@"%@ = ?, ", name]];
-        [placeholders addObject:[obj valueForKey:name]];
+    for (NSString *name in _queryNames) {id value = [obj valueForKey:name];
+        if (value) {
+            [selString appendString:[NSString stringWithFormat:@"%@ = ?, ", name]];
+            [placeholders addObject:[obj valueForKey:name]];
+        }
     }
     [selString appendString:@"obj = ?"];
     [placeholders addObject:[NSKeyedArchiver archivedDataWithRootObject:obj]];

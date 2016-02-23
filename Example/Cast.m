@@ -21,7 +21,7 @@ MJCodingImplementation
 
 + (NSArray *)tt_queryPropertyNames
 {
-    return @[@"ID", @"name"];
+    return @[@"ID", @"name", @"isOk"];
 }
 
 @end

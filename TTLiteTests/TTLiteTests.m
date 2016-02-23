@@ -46,12 +46,13 @@
 
 - (void)testInsert
 {
-
     NSURL *castsPath = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"casts" ofType:nil]];
     NSData *castsData = [NSData dataWithContentsOfURL:castsPath];
     NSArray *casts = [Cast mj_objectArrayWithKeyValuesArray:[NSJSONSerialization JSONObjectWithData:castsData options:NSJSONReadingMutableLeaves error:nil]];
     
-    [self.lite insertObject:casts.lastObject];
+    Cast *cast = casts.lastObject;
+    cast.isOk = YES;
+    [self.lite insertObject:cast];
 }
 
 - (void)testMultiInsert
@@ -67,8 +68,9 @@
 {
     Cast *cast = [[Cast alloc] init];
     cast.alt = @"https://google.com";
-    cast.ID = @"112233";
-    cast.name = @"update test";
+    cast.ID = 112233;
+    cast.name = nil;
+    cast.isOk = YES;
     [self.lite updateObject:cast condition:@"ID = 1036321"];
 }
 
