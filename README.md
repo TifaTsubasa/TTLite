@@ -98,3 +98,11 @@ cast.isOk = YES;
 `range`筛选符合条件的结果
 `sortName`用来排序的属性名
 `asc`升序或降序(默认为升序)
+
+---
+###Help
+1.Please commit issues when you encounter bug or expect new function, thanks!
+
+2.Please pull request when you have good idea ^ ^
+
+**E-mail: tifatsubasa@163.com**
