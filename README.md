@@ -1,11 +1,16 @@
 # TTLite
 ---
+[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/TifaTsubasa/TTLite/edit/master/LICENSE)&nbsp;
+[![CocoaPods](http://img.shields.io/cocoapods/v/TTLite.svg?style=flat)](http://cocoapods.org/?q=TTLite)&nbsp;
+[![CocoaPods](http://img.shields.io/cocoapods/p/TTLite.svg?style=flat)](http://cocoapods.org/?q=TTLite)&nbsp;
+[![Support](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
+
 简单易用的数据存储方案
 
 ### 安装方法
 
 #### CocoaPods
-由于依赖于[FMDB](https://github.com/ccgus/fmdb)，已经需要导入sqlite依赖框架，推荐使用CocoPods进行安装
+由于依赖于[FMDB](https://github.com/ccgus/fmdb)，以及需要导入sqlite依赖框架，推荐使用CocoPods进行安装
 在Podfile文件中添加
 `pod 'TTLite'`
 
@@ -56,8 +61,9 @@ TTLite *lite = [TTLite liteWithPath:path storeClass:[Cast class]]
 }];
 ```
 更多查询方式
+
 |条件|语句|
-| :-------- | --------:|
+| -------- | --------:|
 |等于某个值	|`ID = '123'`|
 |不等于某个值	|`ID != '123'`|
 |大于某个值	|ID > '123'|
@@ -66,3 +72,29 @@ TTLite *lite = [TTLite liteWithPath:path storeClass:[Cast class]]
 |或			|ID > '123' or name != 'jack' |
 |模糊查询		|`name like '%%ac%%'`|
 
+#### 5.删除数据
+```
+[lite deleteObjectWithCondition:@"ID = '123'"];
+```
+`condition`删除所有符合条件的对象数据
+
+#### 6.更新数据
+```
+Cast *cast = [[Cast alloc] init];
+cast.alt = @"https://google.com";
+cast.ID = 112233;
+cast.name = nil;
+cast.isOk = YES;
+[lite updateObject:cast condition:@"ID = '123'"];
+```
+`object`参数，更新后的对象，需要保证新对象所有属性的正确
+`condition`更新所有符合条件的对象数据
+
+#### 7.复杂查询
+```
+- (void)queryObjectsWithCondition:(NSString *)condition limit:(NSRange)range orderBy:(NSString *)sortName ascending:(BOOL)asc result:(void (^)(NSArray *resultArray))result;
+```
+`condition`查询条件
+`range`筛选符合条件的结果
+`sortName`用来排序的属性名
+`asc`升序或降序(默认为升序)
