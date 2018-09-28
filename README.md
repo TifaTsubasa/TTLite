@@ -16,8 +16,11 @@
 
 
 ### 使用说明
+
 #### 1.初始化模型
+
 TTLite的建表依赖于需要存储对象的类型
+
 #####1. 以模型`Cast`为例
 ```
 @interface Cast : NSObject
